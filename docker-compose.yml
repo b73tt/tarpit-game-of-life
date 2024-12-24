@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  tarpit:
+    container_name: tarpit
+    hostname: tarpit
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 23:23/tcp
+      - 3389:3389/tcp
+      - 2387:2387/tcp
+    restart: unless-stopped
